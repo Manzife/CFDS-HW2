@@ -1,4 +1,4 @@
-##############
+################
 
 # Now imagine you have a certain data structure that
 # contains information about different countries and

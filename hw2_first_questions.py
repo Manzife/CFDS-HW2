@@ -27,4 +27,6 @@
 # You should program the function and not use
 # the function "dict" directly
 
-
+def triple (x):
+    new_x = x*3
+    return new_x

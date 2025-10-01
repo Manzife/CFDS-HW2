@@ -20,6 +20,9 @@
 # The function should return the total number of cases
 # registered so far in that country
 
+def total_registered_cases(data,country):
+    return sum(data[country])
+
 
 # 8)
 # Create a function called "total_registered_cases_per_country"
@@ -31,6 +34,11 @@
 # registered so far that the country had
 #
 
+def total_registered_cases_per_country(data):
+
+    return {country : data[country] for country in data.keys()}
+
+
 
 # 9)
 # Create a function called "country_with_most_cases"
@@ -39,3 +47,8 @@
 #
 # The function should return the country with the
 # greatest total amount of cases
+
+def country_with_most_cases(data):
+
+    total_cases = total_registered_cases_per_country(data)
+    return (max(total_cases, key = total_cases.get))

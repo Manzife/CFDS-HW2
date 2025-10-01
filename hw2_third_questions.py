@@ -20,8 +20,11 @@
 # The function should return the total number of cases
 # registered so far in that country
 
-def total_registered_cases(data,country):
-    return sum(data[country])
+def total_registered_cases(data, country):
+    if country in data:
+        return sum(data[country])
+    else:
+        return 0
 
 
 # 8)
@@ -36,7 +39,7 @@ def total_registered_cases(data,country):
 
 def total_registered_cases_per_country(data):
 
-    return {country : data[country] for country in data.keys()}
+    return {country : sum(cases) for country, cases in data.items()}
 
 
 
@@ -51,4 +54,4 @@ def total_registered_cases_per_country(data):
 def country_with_most_cases(data):
 
     total_cases = total_registered_cases_per_country(data)
-    return (max(total_cases, key = total_cases.get))
+    return max(total_cases.items(), key = lambda x: x[1])[0]

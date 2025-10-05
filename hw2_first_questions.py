@@ -5,14 +5,18 @@
 # the value of x multiplied
 # by three.
 #
-
+def triple (x):
+    new_x = x*3
+    return new_x
 
 # 2)
 # Create a function named "subtract" that
 # takes two parameters and returns the result of
 # the second value subtracted from the first.
 #
-
+def subtract(x,y):
+    result = x - y
+    return result
 
 # 3)
 # Create a function called "dictionary_maker"
@@ -27,6 +31,12 @@
 # You should program the function and not use
 # the function "dict" directly
 
-def triple (x):
-    new_x = x*3
-    return new_x
+def dictionary_maker(tuple_list):
+    result = {}
+    for key, value in tuple_list:
+        result[key] = value
+    return result
+
+#data = [('foo', 1), ('bar', 3)]
+#print(dictionary_maker(data))  # {'foo': 1, 'bar': 3} -- GIVEN EXAMPLE
+    

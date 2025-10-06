@@ -24,8 +24,14 @@
 # representing the usernames of every user that
 # has worked as job_title.
 
+def has_experience_as(cvs, job_title):
+    users = []
+    for cv in cvs:
+        if job_title in cv.get('jobs', []):
+            users.append(cv.get('user'))
+    return users
 
-
+    
 #
 # 5)
 # Create a function called "job_counts"
@@ -34,8 +40,15 @@
 # keys are the job titles and the values
 # are the number of users that have done
 # that job.
-
-
+def job_counts(cvs):
+    counts = {}
+    for cv in cvs:
+        for job in cv['jobs']:
+            if counts in counts:
+                counts[job] += 1
+            else:
+                counts[job] = 1
+    return counts
 
 #
 # 6)
@@ -51,3 +64,7 @@
 # HINT: You can use the method '.items' on
 # dictionaries to iterate over them like a
 # list of tuples.
+def most_popular_job(cvs):
+    counts = job_counts(cvs)
+    most_popular_job = max(counts.items(), key=lambda item: item[1])
+    return most_popular_job

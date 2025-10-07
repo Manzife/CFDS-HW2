@@ -44,7 +44,7 @@ def job_counts(cvs):
     counts = {}
     for cv in cvs:
         for job in cv['jobs']:
-            if counts in counts:
+            if job in counts:
                 counts[job] += 1
             else:
                 counts[job] = 1
